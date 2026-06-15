@@ -1,0 +1,33 @@
+# ============================================================
+# .gitignore GỐC - chặn các thứ KHÔNG được đẩy lên GitHub
+# ============================================================
+
+# Thư viện npm (rất nặng - clone về tự "npm install")
+node_modules/
+**/node_modules/
+
+# BIẾN MÔI TRƯỜNG & SECRET - TUYỆT ĐỐI KHÔNG commit
+.env
+**/.env
+*.local
+
+# Kết quả build
+dist/
+**/dist/
+build/
+
+# Log
+*.log
+npm-debug.log*
+
+# Tài liệu nội bộ (chứa thông tin nhạy cảm như App Password) - không công khai
+YeuCau.md
+
+# Cấu hình công cụ / hệ điều hành / IDE
+.claude/
+.vscode/
+.idea/
+desktop.ini
+*.ico
+Thumbs.db
+.DS_Store

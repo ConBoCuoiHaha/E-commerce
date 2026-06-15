@@ -1,0 +1,8 @@
+# Thư mục chứa thư viện cài bằng npm - rất nặng, ai clone về tự chạy "npm install"
+node_modules/
+
+# File chứa thông tin nhạy cảm (secret, mật khẩu DB) - TUYỆT ĐỐI không đẩy lên Git
+.env
+
+# File log
+*.log

@@ -1,0 +1,10 @@
+# robots.txt - hướng dẫn bot tìm kiếm (Google, Bing...)
+User-agent: *
+# Cho phép index toàn bộ cửa hàng
+Allow: /
+# Không index khu quản trị, trang tài khoản cá nhân, giỏ/thanh toán
+Disallow: /admin
+Disallow: /account
+Disallow: /cart
+Disallow: /checkout
+Disallow: /payment
