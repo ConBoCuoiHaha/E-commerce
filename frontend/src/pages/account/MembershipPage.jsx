@@ -6,7 +6,7 @@ import { formatVND } from "../../components/ProductCard.jsx";
 import { usePageMeta } from "../../lib/usePageMeta.js";
 
 // TRANG THÀNH VIÊN (v10-P3): hạng VIP + tiến độ tích lũy + xác minh HSSV.
-const TIER_LABEL = { "S-NEW": "Thành viên mới", "S-MEM": "VIP Bạc", "S-VIP": "VIP Vàng" };
+const TIER_LABEL = { "H-NEW": "Thành viên mới", "H-MEM": "VIP Bạc", "H-VIP": "VIP Vàng" };
 
 export default function MembershipPage() {
   usePageMeta("Thành viên");
@@ -34,7 +34,7 @@ export default function MembershipPage() {
   if (!m) return <p className="info-text">Đang tải...</p>;
 
   // Tiến độ tới hạng kế tiếp
-  const next = m.vipTier === "S-NEW" ? m.memThreshold : m.vipTier === "S-MEM" ? m.vipThreshold : null;
+  const next = m.vipTier === "H-NEW" ? m.memThreshold : m.vipTier === "H-MEM" ? m.vipThreshold : null;
   const progress = next ? Math.min(100, Math.round((m.accumulatedSpending / next) * 100)) : 100;
 
   return (

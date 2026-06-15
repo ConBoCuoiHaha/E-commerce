@@ -2,7 +2,7 @@
 // MEMBERSHIP.JS - TÍNH CHIẾT KHẤU THEO HẠNG (HSSV / VIP) (v10-P3)
 // ------------------------------------------------------------
 // Quy tắc (theo Google Doc nghiệp vụ):
-//   - Mỗi danh mục có ma trận: HSSV / S-MEM / S-VIP = {% , cap}.
+//   - Mỗi danh mục có ma trận: HSSV / H-MEM / H-VIP = {% , cap}.
 //   - Khách được áp mức CÓ LỢI NHẤT giữa: ưu đãi HSSV (nếu thẻ còn
 //     hiệu lực) và ưu đãi theo hạng VIP hiện tại.
 //   - Giảm mỗi dòng = min(thành tiền dòng × %, cap) -> cap chống lạm dụng.
@@ -35,7 +35,7 @@ export const computeMembershipDiscount = (user, items, setting) => {
 
   const studentActive = user.isStudentActive?.() || false;
   // Hạng VIP -> khóa ma trận tương ứng
-  const vipKey = user.vipTier === "S-VIP" ? "vip" : user.vipTier === "S-MEM" ? "mem" : null;
+  const vipKey = user.vipTier === "H-VIP" ? "vip" : user.vipTier === "H-MEM" ? "mem" : null;
 
   let total = 0;
   let usedStudent = false;
@@ -73,7 +73,7 @@ export const computeMembershipDiscount = (user, items, setting) => {
 
 // Xác định hạng VIP theo tổng chi tiêu tích lũy + ngưỡng cấu hình
 export const tierFromSpending = (spending, setting) => {
-  if (spending >= setting.vipVipThreshold) return "S-VIP";
-  if (spending >= setting.vipMemThreshold) return "S-MEM";
-  return "S-NEW";
+  if (spending >= setting.vipVipThreshold) return "H-VIP";
+  if (spending >= setting.vipMemThreshold) return "H-MEM";
+  return "H-NEW";
 };

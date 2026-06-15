@@ -47,8 +47,8 @@ const accountingSettingSchema = new mongoose.Schema(
     defaultDepreciationPct: { type: [Number], default: [15, 15, 15] },
 
     // --- 2b. MA TRẬN CHIẾT KHẤU MEMBERSHIP (v10-P3) ---
-    // Mỗi danh mục có 3 mức ưu đãi (HSSV / VIP Bạc S-MEM / VIP Vàng
-    // S-VIP), mỗi mức gồm % giảm + CAP (mức giảm tối đa tính bằng đồng)
+    // Mỗi danh mục có 3 mức ưu đãi (HSSV / VIP Bạc H-MEM / VIP Vàng
+    // H-VIP), mỗi mức gồm % giảm + CAP (mức giảm tối đa tính bằng đồng)
     // để chống lạm dụng. Khi thanh toán, hệ thống áp mức CÓ LỢI NHẤT
     // cho khách giữa HSSV (nếu thẻ còn hiệu lực) và hạng VIP hiện tại.
     discountMatrix: {
@@ -65,8 +65,8 @@ const accountingSettingSchema = new mongoose.Schema(
     },
 
     // --- 3. Hạng VIP + giá vốn mở sổ ---
-    vipMemThreshold: { type: Number, default: 15000000 }, // S-MEM
-    vipVipThreshold: { type: Number, default: 50000000 }, // S-VIP
+    vipMemThreshold: { type: Number, default: 15000000 }, // H-MEM
+    vipVipThreshold: { type: Number, default: 50000000 }, // H-VIP
     // Tỷ lệ ước tính GIÁ VỐN so với giá bán cho lô "mở sổ" (opening
     // balance) của hàng tồn sẵn có trước khi dùng hệ thống nhập lô.
     // 0.75 = giả định giá nhập bằng 75% giá bán (biên gộp ~25%, khớp

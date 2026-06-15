@@ -112,8 +112,8 @@ export default function AccountingSettingsPage() {
               <tr>
                 <th>Danh mục</th>
                 <th>HSSV %/cap</th>
-                <th>S-MEM %/cap</th>
-                <th>S-VIP %/cap</th>
+                <th>H-MEM %/cap</th>
+                <th>H-VIP %/cap</th>
               </tr>
             </thead>
             <tbody>
@@ -136,10 +136,10 @@ export default function AccountingSettingsPage() {
 
         <h2>Hạng VIP & giá vốn mở sổ</h2>
         <div className="form-row">
-          <label className="field" style={{ flex: 1 }}>Ngưỡng S-MEM (đ tích lũy)
+          <label className="field" style={{ flex: 1 }}>Ngưỡng H-MEM (đ tích lũy)
             <input type="number" value={form.vipMemThreshold} onChange={(e) => set("vipMemThreshold", e.target.value)} />
           </label>
-          <label className="field" style={{ flex: 1 }}>Ngưỡng S-VIP (đ tích lũy)
+          <label className="field" style={{ flex: 1 }}>Ngưỡng H-VIP (đ tích lũy)
             <input type="number" value={form.vipVipThreshold} onChange={(e) => set("vipVipThreshold", e.target.value)} />
           </label>
           <label className="field" style={{ flex: 1 }}>Tỷ lệ giá vốn mở sổ (0-1)

@@ -24,7 +24,7 @@ const DEFAULTS_BY_SLUG = {
 };
 
 // Ma trận chiết khấu mặc định theo slug: { student/mem/vip: [percent, cap] }
-// CAP lấy theo tài liệu (laptop HSSV 1tr / S-MEM 300k / S-VIP 500k...);
+// CAP lấy theo tài liệu (laptop HSSV 1tr / H-MEM 300k / H-VIP 500k...);
 // % là đề xuất ban đầu (tài liệu chỉ cho CAP) - admin chỉnh sau qua UI.
 const DISCOUNT_BY_SLUG = {
   laptop: { student: [5, 1000000], mem: [1, 300000], vip: [3, 500000] },

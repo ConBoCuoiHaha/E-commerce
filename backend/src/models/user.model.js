@@ -127,8 +127,8 @@ const userSchema = new mongoose.Schema(
     accumulatedSpending: { type: Number, default: 0 },
     vipTier: {
       type: String,
-      enum: ["S-NEW", "S-MEM", "S-VIP"],
-      default: "S-NEW",
+      enum: ["H-NEW", "H-MEM", "H-VIP"],
+      default: "H-NEW",
     },
   },
   { timestamps: true }
